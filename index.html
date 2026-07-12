@@ -2,12 +2,3571 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="https://ngrok.com/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://ngrok.com/favicon.ico"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/style.css" />
     <title>my-ngrok-ui</title>
   </head>
-  <body class="bg-red-950 text-white">
-    <h1>Hello</h1>
+  <body class="bg-neutral-950 text-white">
+    <div class="overflow-clip">
+      <div
+        aria-hidden="true"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="100"
+        data-state="idle"
+        class="group fixed inset-x-0 top-0 z-50 h-0.5 pointer-events-none"
+        role="progressbar"
+      >
+        <div
+          class="h-full bg-linear-to-r transition-[width,opacity] duration-500 ease-in-out will-change-[width,opacity] motion-reduce:transition-none from-accent-500 to-fuchsia-500 group-data-[state=submitting]:w-1/3 group-data-[state=loading]:w-4/5 group-data-[state=idle]:w-full"
+          style="width: 0; opacity: 0; transition: none"
+        ></div>
+      </div>
+      <a
+        data-slot="skip-to-main-link"
+        class="cursor-pointer rounded text-accent-600 hover:underline focus:outline-hidden focus-visible:ring-3 focus-visible:ring-focus-accent not-focus:sr-only bg-card fixed top-2 left-2 z-max px-4 py-2 shadow-lg"
+        href="#main"
+        >Skip to main content</a
+      >
+      <nav class="flex items-center justify-center px-4 lg:py-10 py-4">
+        <div class="flex w-full max-w-267 items-center justify-between gap-4">
+          <a
+            class="text-strong/90 hover:text-strong"
+            title="ngrok home"
+            href="/"
+            data-discover="true"
+            ><span class="sr-only">ngrok home</span
+            ><svg
+              fill="currentColor"
+              height="1em"
+              viewBox="0 0 94 36"
+              width="2.61em"
+              class="h-10 w-26.75 lg:h-12 lg:w-32"
+            >
+              <path
+                d="M32.272 12.011c-1.298-1.466-2.904-2.205-4.812-2.205-1.176 0-2.26.233-3.255.7a7.995 7.995 0 0 0-2.581 1.906 9.205 9.205 0 0 0-1.715 2.853 9.773 9.773 0 0 0-.628 3.546c0 1.25.194 2.39.58 3.419.362.98.918 1.877 1.635 2.636A7.543 7.543 0 0 0 24 26.584c.965.41 2.025.617 3.176.617.522 0 1.005-.041 1.445-.116.439-.075.858-.2 1.26-.37.4-.175.79-.398 1.18-.664.385-.27.792-.612 1.21-1.018v4.353h-.005v.421h-5.33l-4.005 4.64v.798h15.037v-24.98h-5.697v1.746Zm-.014 7.979a4.25 4.25 0 0 1-.786 1.215 3.555 3.555 0 0 1-2.592 1.1 3.627 3.627 0 0 1-1.464-.292 3.508 3.508 0 0 1-1.166-.808 3.93 3.93 0 0 1-1.054-2.72c0-.519.097-1.006.298-1.457a3.77 3.77 0 0 1 .804-1.181 4.114 4.114 0 0 1 1.162-.808 3.484 3.484 0 0 1 2.817-.016c.448.19.844.463 1.181.81.336.347.6.743.804 1.194.202.452.298.95.298 1.493 0 .505-.104 1.005-.302 1.47m-16.261-7.708a6.173 6.173 0 0 0-2.06-1.602 4.875 4.875 0 0 0-.57-.22 6.383 6.383 0 0 0-.923-.216H8.383L5.697 13.39v-3.082H.002v16.61h5.695V15.712h5.35l.444-.01v11.214h5.697V16.528c0-.885-.084-1.674-.25-2.366a4.655 4.655 0 0 0-.941-1.877zm38.367-2.018h-6.213l-2.47 2.863v-2.864h-5.7v16.61h5.71l.004-11.117h4.144l4.526-5.26zm31.051 7.672 7.79-7.392v-.281H85.7l-5.975 5.991V0h-5.696v26.87h5.696v-6.766l6.262 6.763h7.663v-.316l-8.233-8.617zm-16.11-5.78a9.436 9.436 0 0 0-3.085-1.842 10.953 10.953 0 0 0-3.855-.664c-1.407 0-2.705.226-3.884.678a9.611 9.611 0 0 0-3.072 1.858 8.488 8.488 0 0 0-2.016 2.788 8.281 8.281 0 0 0-.722 3.449c0 1.362.24 2.596.722 3.707a8.52 8.52 0 0 0 2.002 2.862c.85.798 1.86 1.415 3.036 1.847 1.177.432 2.455.647 3.842.647 1.406 0 2.707-.215 3.919-.647 1.204-.431 2.24-1.04 3.098-1.833a8.583 8.583 0 0 0 2.031-2.816c.493-1.09.742-2.29.742-3.611 0-1.316-.244-2.52-.722-3.612a8.424 8.424 0 0 0-2.035-2.81Zm-3.558 7.864c-.2.461-.463.869-.786 1.215a3.573 3.573 0 0 1-2.592 1.1c-.502 0-.981-.096-1.434-.291a3.44 3.44 0 0 1-1.16-.809 4.155 4.155 0 0 1-.788-1.215 3.825 3.825 0 0 1-.297-1.537c0-.517.098-1.004.297-1.456.201-.451.46-.849.787-1.194a3.579 3.579 0 0 1 2.597-1.1c.502 0 .98.096 1.43.29.448.19.839.461 1.16.81.328.345.586.752.786 1.214.2.461.297.954.297 1.471 0 .538-.096 1.04-.297 1.502"
+              ></path></svg></a
+          ><button
+            aria-disabled="false"
+            data-slot="icon-button"
+            class="icon-button inline-flex shrink-0 items-center justify-center rounded-[var(--icon-button-border-radius,0.375rem)] border focus:outline-hidden focus-visible:ring-4 disabled:cursor-default disabled:opacity-50 not-disabled:active:scale-97 ease-out transition-transform duration-150 text-strong focus-visible:ring-focus-accent not-disabled:hover:bg-neutral-500/10 not-disabled:hover:text-strong border-transparent size-9 lg:hidden"
+            data-appearance="ghost"
+            data-disabled="false"
+            data-icon-button="true"
+            data-loading="false"
+            aria-expanded="false"
+            aria-haspopup="dialog"
+            data-state="closed"
+            type="button"
+          >
+            <span class="sr-only">open mobile navigation</span
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              fill="currentColor"
+              viewBox="0 0 256 256"
+              data-slot="icon"
+              class="shrink-0 size-5"
+            >
+              <path
+                d="M228,128a12,12,0,0,1-12,12H40a12,12,0,0,1,0-24H216A12,12,0,0,1,228,128ZM40,76H216a12,12,0,0,0,0-24H40a12,12,0,0,0,0,24ZM216,180H40a12,12,0,0,0,0,24H216a12,12,0,0,0,0-24Z"
+              ></path>
+            </svg>
+          </button>
+          <div class="hidden items-center gap-6 lg:flex">
+            <button
+              class="text-muted hover:text-strong click-area flex shrink-0 items-center gap-1 font-mono text-xs font-medium tracking-wider uppercase"
+              type="button"
+              id="nav-product"
+              aria-expanded="false"
+            >
+              Products<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                viewBox="0 0 256 256"
+                data-slot="icon"
+                class="shrink-0 relative -top-px size-3"
+              >
+                <path
+                  d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"
+                ></path>
+              </svg></button
+            ><button
+              class="text-muted hover:text-strong click-area flex shrink-0 items-center gap-1 font-mono text-xs font-medium tracking-wider uppercase"
+              type="button"
+              id="nav-problems-we-solve"
+              aria-expanded="false"
+            >
+              Problems We Solve<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                viewBox="0 0 256 256"
+                data-slot="icon"
+                class="shrink-0 relative -top-px size-3"
+              >
+                <path
+                  d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"
+                ></path>
+              </svg></button
+            ><button
+              class="text-muted hover:text-strong click-area flex shrink-0 items-center gap-1 font-mono text-xs font-medium tracking-wider uppercase"
+              type="button"
+              id="nav-resources"
+              aria-expanded="false"
+            >
+              Resources<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                fill="currentColor"
+                viewBox="0 0 256 256"
+                data-slot="icon"
+                class="shrink-0 relative -top-px size-3"
+              >
+                <path
+                  d="M216.49,104.49l-80,80a12,12,0,0,1-17,0l-80-80a12,12,0,0,1,17-17L128,159l71.51-71.52a12,12,0,0,1,17,17Z"
+                ></path>
+              </svg></button
+            ><a
+              href="https://ngrok.com/docs/start"
+              target="_blank"
+              rel="noopener"
+              class="text-muted hover:text-strong click-area font-mono text-xs font-medium tracking-wider uppercase"
+              id="nav-docs"
+              >Docs</a
+            ><a
+              class="text-muted hover:text-strong click-area font-mono text-xs font-medium tracking-wider uppercase"
+              id="nav-pricing"
+              href="/pricing"
+              data-discover="true"
+              >Pricing</a
+            >
+          </div>
+          <div class="hidden items-center gap-2 lg:flex">
+            <a
+              href="https://dashboard.ngrok.com/login"
+              class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap focus:outline-hidden focus-visible:ring-4 disabled:cursor-default disabled:opacity-50 not-disabled:active:scale-97 ease-out transition-transform duration-150 focus-visible:ring-focus-accent border border-transparent px-3 h-9 rounded-full bg-black/10 not-disabled:hover:bg-black/15 not-disabled:active:bg-black/15 text-strong font-mono text-[0.8125rem] font-medium tracking-wider uppercase"
+              aria-disabled="false"
+              data-slot="button"
+              data-appearance="filled"
+              data-disabled="false"
+              data-loading="false"
+              data-priority="default"
+              id="nav-login"
+              >Log in</a
+            ><a
+              href="https://dashboard.ngrok.com/signup"
+              class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap focus:outline-hidden focus-visible:ring-4 disabled:cursor-default disabled:opacity-50 not-disabled:active:scale-97 ease-out transition-transform duration-150 focus-visible:ring-focus-accent border border-transparent px-3 h-9 rounded-full bg-black/90 font-mono text-[0.8125rem] font-medium tracking-wider text-white/90 uppercase not-disabled:hover:bg-black not-disabled:active:bg-black"
+              aria-disabled="false"
+              data-slot="button"
+              data-appearance="filled"
+              data-disabled="false"
+              data-loading="false"
+              data-priority="default"
+              id="nav-signup"
+              >Sign up</a
+            >
+          </div>
+        </div>
+        <ul class="sr-only">
+          <li>
+            <span>Products</span>
+            <ul>
+              <li><a href="/gateway">Gateway</a></li>
+              <li><a href="https://ngrok.ai">AI Gateway</a></li>
+              <li><a href="/use-cases/share-localhost">Share localhost</a></li>
+            </ul>
+          </li>
+          <li>
+            <span>Delivery</span>
+            <ul>
+              <li><a href="/use-cases/api-gateway">API gateway</a></li>
+              <li><a href="https://ngrok.ai">AI Gateway</a></li>
+              <li>
+                <a
+                  href="https://ngrok.com/docs/universal-gateway/examples/webhook-gateway"
+                  >Webhook gateway</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://ngrok.com/docs/universal-gateway/examples/ephemeral-workloads"
+                  >Ephemeral workloads</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span>Development</span>
+            <ul>
+              <li><a href="/use-cases/share-localhost">Share localhost</a></li>
+              <li>
+                <a href="https://ngrok.com/docs/using-ngrok-with/using-mcp"
+                  >Connect MCPs to AI providers</a
+                >
+              </li>
+              <li>
+                <a href="https://ngrok.com/docs/guides/share-localhost/webhooks"
+                  >Test webhooks</a
+                >
+              </li>
+              <li>
+                <a href="https://ngrok.com/docs/k8s/guides/local-projection"
+                  >Access remote K8s clusters from dev</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span>Connectivity</span>
+            <ul>
+              <li>
+                <a href="/use-cases/site-to-site-connectivity"
+                  >Site-to-site connectivity</a
+                >
+              </li>
+              <li><a href="/use-cases/device-gateway">Device gateway</a></li>
+              <li>
+                <a href="https://ngrok.com/docs/guides/ssh-rdp"
+                  >Remote access</a
+                >
+              </li>
+              <li>
+                <a href="/use-cases/private-connectivity"
+                  >Private connectivity</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span>Play</span>
+            <ul>
+              <li>
+                <a
+                  href="https://ngrok.com/docs/universal-gateway/examples/minecraft"
+                  >Minecraft</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <span>Developers</span>
+            <ul>
+              <li><a href="/download">Download</a></li>
+              <li><a href="https://ngrok.com/docs/start">Docs</a></li>
+              <li>
+                <a href="https://ngrok.com/docs/getting-started">Quickstart</a>
+              </li>
+              <li><a href="https://www.youtube.com/@ngrokHQ">Videos</a></li>
+              <li><a href="https://ngrok.com/docs/api">API</a></li>
+              <li>
+                <a href="https://ngrok.com/docs/integrations">Integrations</a>
+              </li>
+              <li><a href="https://github.com/ngrok">GitHub</a></li>
+              <li><a href="https://status.ngrok.com/">Status</a></li>
+            </ul>
+          </li>
+          <li>
+            <span>Resources</span>
+            <ul>
+              <li><a href="/support">Support</a></li>
+              <li><a href="/security">Security</a></li>
+              <li><a href="/customers">Case studies</a></li>
+              <li><a href="/careers">Careers</a></li>
+              <li><a href="https://ngrok.com/contact">Contact</a></li>
+            </ul>
+          </li>
+          <li>
+            <span>Blog</span>
+            <ul>
+              <li><a href="/blog" data-discover="true">Blog home</a></li>
+              <li>
+                <a
+                  href="/blog/native-anthropic-sdk-support"
+                  data-discover="true"
+                  >Native Anthropic SDK support for the AI Gateway</a
+                >
+              </li>
+              <li>
+                <a href="/blog/quantization" data-discover="true"
+                  >Make LLMs 4x smaller and 2x faster</a
+                >
+              </li>
+              <li>
+                <a href="/blog/prompt-caching" data-discover="true"
+                  >Prompt caching: 10x cheaper LLM tokens, but how?</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <main
+        data-slot="main"
+        id="main"
+        tabindex="-1"
+        class="focus:outline-hidden relative"
+      >
+        <div class="relative">
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute left-0 h-px w-px top-1/4"
+          ></div>
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute left-0 h-px w-px top-1/2"
+          ></div>
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute left-0 h-px w-px top-3/4"
+          ></div>
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute left-0 h-px w-px bottom-0"
+          ></div>
+          <section
+            class="flex flex-col items-center justify-center px-4 pt-20 pb-12"
+          >
+            <div class="relative flex w-full max-w-270 flex-col items-center">
+              <div
+                class="gradient-blur pointer-events-none absolute top-1/2 left-1/2 aspect-video w-11/12 max-w-167.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[linear-gradient(98deg,var(--color-amber-500)_1.35%,var(--color-lime-400)_18.48%,var(--color-emerald-400)_38.35%,var(--color-sky-500)_58.63%,var(--color-purple-500)_79.7%,var(--color-rose-500)_100%)] opacity-0 -z-10 animate-in fade-in duration-80 ease-out"
+                style="
+                  --gradient-blur-filter: url(#gradient-blur-_r_0_);
+                  --gradient-blur-filter-sm: url(#gradient-blur-sm-_r_0_);
+                "
+              >
+                <svg class="sr-only" aria-hidden="true">
+                  <defs>
+                    <filter
+                      id="gradient-blur-_r_0_"
+                      x="-50%"
+                      y="-50%"
+                      width="200%"
+                      height="200%"
+                      color-interpolation-filters="linearRGB"
+                    >
+                      <feGaussianBlur
+                        in="SourceGraphic"
+                        stdDeviation="100"
+                        result="blur"
+                      ></feGaussianBlur>
+                      <feTurbulence
+                        type="fractalNoise"
+                        baseFrequency="0.8"
+                        numOctaves="4"
+                        seed="1"
+                        result="noise"
+                      ></feTurbulence>
+                      <feComposite
+                        in="blur"
+                        in2="noise"
+                        operator="arithmetic"
+                        k1="0"
+                        k2="1"
+                        k3="0.1"
+                        k4="0"
+                        result="dithered"
+                      ></feComposite>
+                      <feComposite
+                        in="dithered"
+                        in2="blur"
+                        operator="in"
+                        result="clipped"
+                      ></feComposite>
+                      <feColorMatrix
+                        in="clipped"
+                        type="saturate"
+                        values="1.4"
+                      ></feColorMatrix>
+                    </filter>
+                  </defs></svg
+                ><svg class="sr-only" aria-hidden="true">
+                  <defs>
+                    <filter
+                      id="gradient-blur-sm-_r_0_"
+                      x="-50%"
+                      y="-50%"
+                      width="200%"
+                      height="200%"
+                      color-interpolation-filters="linearRGB"
+                    >
+                      <feGaussianBlur
+                        in="SourceGraphic"
+                        stdDeviation="60"
+                        result="blur"
+                      ></feGaussianBlur>
+                      <feTurbulence
+                        type="fractalNoise"
+                        baseFrequency="0.8"
+                        numOctaves="4"
+                        seed="1"
+                        result="noise"
+                      ></feTurbulence>
+                      <feComposite
+                        in="blur"
+                        in2="noise"
+                        operator="arithmetic"
+                        k1="0"
+                        k2="1"
+                        k3="0.1"
+                        k4="0"
+                        result="dithered"
+                      ></feComposite>
+                      <feComposite
+                        in="dithered"
+                        in2="blur"
+                        operator="in"
+                        result="clipped"
+                      ></feComposite>
+                      <feColorMatrix
+                        in="clipped"
+                        type="saturate"
+                        values="1.4"
+                      ></feColorMatrix>
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <div
+                class="flex w-full max-w-full flex-col items-center space-y-6"
+              >
+                <div class="flex w-full flex-col items-center space-y-2">
+                  <h1
+                    class="font-family text-strong min-h-30 w-full text-center text-6xl leading-none text-balance md:min-h-36 md:text-7xl"
+                  >
+                    Connect anything,<br /><span
+                      class="bg-[linear-gradient(98deg,var(--color-amber-700)_1.35%,var(--color-lime-700)_18.48%,var(--color-emerald-700)_38.35%,var(--color-sky-700)_58.63%,var(--color-purple-700)_79.7%,var(--color-rose-700)_100%)] bg-clip-text text-transparent will-change-transform"
+                      >anywhere.</span
+                    >
+                  </h1>
+                  <p class="text-body max-w-lg text-center text-xl">
+                    ngrok is developer infrastructure that routes and secures
+                    traffic to your apps, APIs, and AI models.
+                  </p>
+                </div>
+                <svg class="sr-only" aria-hidden="true">
+                  <defs>
+                    <filter
+                      id="_R_ka55_"
+                      x="-50%"
+                      y="-50%"
+                      width="200%"
+                      height="200%"
+                    >
+                      <feGaussianBlur
+                        in="SourceGraphic"
+                        stdDeviation="8"
+                      ></feGaussianBlur>
+                    </filter>
+                  </defs></svg
+                ><a
+                  class="flex items-center justify-center relative rounded-full bg-black/90 hover:bg-black px-5 h-12 font-mono text-[0.8125rem] font-medium uppercase tracking-wider text-white/90 glow hover:after:scale-105 after:transition-transform active:scale-[97%] select-none [-webkit-user-select:none] [-webkit-touch-callout:none] [-webkit-tap-highlight-color:transparent] text-center 2xs:w-auto w-full shrink-0"
+                  style="--glow-filter: url(#_R_ka55_)"
+                  href="https://dashboard.ngrok.com/signup"
+                  id="hero-signup-cta"
+                  >Get started (for free)</a
+                >
+              </div>
+            </div>
+          </section>
+          <section class="flex w-full justify-center px-4 py-8">
+            <div class="flex w-full max-w-300 flex-col items-center">
+              <div
+                class="relative w-full overflow-hidden mask-x-from-90% mask-x-to-100% md:mask-x-from-70% md:mask-x-to-90%"
+              >
+                <section
+                  aria-label="Partner logos"
+                  class="relative overflow-x-hidden"
+                  style="
+                    --logoloop-gap: 50px;
+                    --logoloop-logoHeight: 48px;
+                    --logoloop-duration: 109.93333333333334s;
+                  "
+                >
+                  <div
+                    class="relative z-0 flex w-max will-change-transform select-none motion-reduce:transform-none"
+                    style="
+                      animation-name: logo-loop-scroll;
+                      animation-duration: var(--logoloop-duration);
+                      animation-timing-function: linear;
+                      animation-iteration-count: infinite;
+                      animation-direction: normal;
+                      animation-play-state: running;
+                    "
+                  >
+                    <ul class="flex items-center" aria-hidden="false">
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 170px"
+                          src="https://ngrok.com//assets/home/logo/calendly.svg"
+                          width="170"
+                          height="48"
+                          alt="Calendly"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 149px"
+                          src="https://ngrok.com//assets/home/logo/cyera.svg"
+                          width="149"
+                          height="48"
+                          alt="Cyera"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 194px"
+                          src="https://ngrok.com//assets/home/logo/databricks.svg"
+                          width="194"
+                          height="48"
+                          alt="Databricks"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 48px"
+                          src="https://ngrok.com//assets/home/logo/github.svg"
+                          width="48"
+                          height="48"
+                          alt="GitHub"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 227px"
+                          src="https://ngrok.com//assets/home/logo/grafana.svg"
+                          width="227"
+                          height="48"
+                          alt="Grafana"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 118px"
+                          src="https://ngrok.com//assets/home/logo/harvey.svg"
+                          width="118"
+                          height="48"
+                          alt="Harvey"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 179px"
+                          src="https://ngrok.com//assets/home/logo/huggingface.svg"
+                          width="179"
+                          height="48"
+                          alt="Hugging Face"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 45px"
+                          src="https://ngrok.com//assets/home/logo/mercor.png"
+                          width="45"
+                          height="48"
+                          alt="Mercor"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 144px"
+                          src="https://ngrok.com//assets/home/logo/microsoft.svg"
+                          width="144"
+                          height="48"
+                          alt="Microsoft"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 86px"
+                          src="https://ngrok.com//assets/home/logo/okta.svg"
+                          width="86"
+                          height="48"
+                          alt="Okta"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 47px"
+                          src="https://ngrok.com//assets/home/logo/openai.svg"
+                          width="47"
+                          height="48"
+                          alt="Open AI"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 170px"
+                          src="https://ngrok.com//assets/home/logo/perplexity.svg"
+                          width="170"
+                          height="48"
+                          alt="Perplexity"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 157px"
+                          src="https://ngrok.com//assets/home/logo/ramp.svg"
+                          width="157"
+                          height="48"
+                          alt="Ramp"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 116px"
+                          src="https://ngrok.com//assets/home/logo/schneider.svg"
+                          width="116"
+                          height="48"
+                          alt="Schneider Electric"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 119px"
+                          src="https://ngrok.com//assets/home/logo/twilio.svg"
+                          width="119"
+                          height="48"
+                          alt="Twilio"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 140px"
+                          src="https://ngrok.com//assets/home/logo/vercel.svg"
+                          width="140"
+                          height="48"
+                          alt="Vercel"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 189px"
+                          src="https://ngrok.com//assets/home/logo/windsurf.svg"
+                          width="189"
+                          height="48"
+                          alt="Windsurf"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 100px"
+                          src="https://ngrok.com//assets/home/logo/zoom.svg"
+                          width="100"
+                          height="48"
+                          alt="Zoom"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                    </ul>
+                    <ul class="flex items-center" aria-hidden="true">
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 170px"
+                          src="https://ngrok.com//assets/home/logo/calendly.svg"
+                          width="170"
+                          height="48"
+                          alt="Calendly"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 149px"
+                          src="https://ngrok.com//assets/home/logo/cyera.svg"
+                          width="149"
+                          height="48"
+                          alt="Cyera"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 194px"
+                          src="https://ngrok.com//assets/home/logo/databricks.svg"
+                          width="194"
+                          height="48"
+                          alt="Databricks"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 48px"
+                          src="https://ngrok.com//assets/home/logo/github.svg"
+                          width="48"
+                          height="48"
+                          alt="GitHub"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 227px"
+                          src="https://ngrok.com//assets/home/logo/grafana.svg"
+                          width="227"
+                          height="48"
+                          alt="Grafana"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 118px"
+                          src="https://ngrok.com//assets/home/logo/harvey.svg"
+                          width="118"
+                          height="48"
+                          alt="Harvey"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 179px"
+                          src="https://ngrok.com//assets/home/logo/huggingface.svg"
+                          width="179"
+                          height="48"
+                          alt="Hugging Face"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 45px"
+                          src="https://ngrok.com//assets/home/logo/mercor.png"
+                          width="45"
+                          height="48"
+                          alt="Mercor"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 144px"
+                          src="https://ngrok.com//assets/home/logo/microsoft.svg"
+                          width="144"
+                          height="48"
+                          alt="Microsoft"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 86px"
+                          src="https://ngrok.com//assets/home/logo/okta.svg"
+                          width="86"
+                          height="48"
+                          alt="Okta"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 47px"
+                          src="https://ngrok.com//assets/home/logo/openai.svg"
+                          width="47"
+                          height="48"
+                          alt="Open AI"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 170px"
+                          src="https://ngrok.com//assets/home/logo/perplexity.svg"
+                          width="170"
+                          height="48"
+                          alt="Perplexity"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 157px"
+                          src="https://ngrok.com//assets/home/logo/ramp.svg"
+                          width="157"
+                          height="48"
+                          alt="Ramp"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 116px"
+                          src="https://ngrok.com//assets/home/logo/schneider.svg"
+                          width="116"
+                          height="48"
+                          alt="Schneider Electric"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 119px"
+                          src="https://ngrok.com//assets/home/logo/twilio.svg"
+                          width="119"
+                          height="48"
+                          alt="Twilio"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 140px"
+                          src="https://ngrok.com//assets/home/logo/vercel.svg"
+                          width="140"
+                          height="48"
+                          alt="Vercel"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 189px"
+                          src="https://ngrok.com//assets/home/logo/windsurf.svg"
+                          width="189"
+                          height="48"
+                          alt="Windsurf"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                      <li
+                        class="mr-(--logoloop-gap) flex-none text-(length:--logoloop-logoHeight) leading-none"
+                      >
+                        <img
+                          class="pointer-events-none block h-(--logoloop-logoHeight) [-webkit-user-drag:none] [image-rendering:-webkit-optimize-contrast]"
+                          style="width: 100px"
+                          src="https://ngrok.com//assets/home/logo/zoom.svg"
+                          width="100"
+                          height="48"
+                          alt="Zoom"
+                          loading="lazy"
+                          decoding="async"
+                          draggable="false"
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </section>
+          <section
+            class="flex flex-col items-center justify-center px-4 pt-4 pb-12"
+          >
+            <div
+              class="relative flex w-full max-w-133 flex-col gap-4 min-[64rem]:max-w-267"
+            >
+              <div class="flex w-full flex-col items-center gap-2 pt-4 pb-2">
+                <p
+                  class="text-muted text-center font-mono text-[0.75rem] font-medium tracking-[0.08em] uppercase"
+                >
+                  Our products
+                </p>
+                <h2
+                  class="font-family text-strong text-center text-4xl leading-none text-balance md:text-5xl"
+                >
+                  Way more than a tunnel to localhost.
+                </h2>
+              </div>
+              <div class="grid items-stretch gap-4 min-[64rem]:grid-cols-2">
+                <a
+                  href="https://ngrok.ai"
+                  target="_blank"
+                  rel="noopener"
+                  id="home-tile-ai-gateway"
+                  class="group rounded-xl border border-card bg-card relative flex flex-col items-center gap-6 overflow-hidden p-8 text-center transition-colors hover:border-amber-600/30"
+                  ><div
+                    class="pointer-events-none absolute inset-0 z-10 -m-px rounded-xl opacity-0 transition-opacity duration-500 ease-in-out group-focus-within:opacity-100 group-hover:opacity-100"
+                    style="
+                      background: radial-gradient(
+                        circle at 50% 100%,
+                        rgba(245, 158, 11, 0.2),
+                        transparent 80%
+                      );
+                    "
+                  ></div>
+                  <div
+                    class="pointer-events-none flex flex-col items-center gap-2"
+                  >
+                    <div
+                      class="flex items-center justify-center rounded-md bg-amber-500/20 p-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                        data-slot="icon"
+                        class="shrink-0 size-8 text-amber-600"
+                      >
+                        <path
+                          d="M197.58,129.06,146,110l-19-51.62a15.92,15.92,0,0,0-29.88,0L78,110l-51.62,19a15.92,15.92,0,0,0,0,29.88L78,178l19,51.62a15.92,15.92,0,0,0,29.88,0L146,178l51.62-19a15.92,15.92,0,0,0,0-29.88ZM137,164.22a8,8,0,0,0-4.74,4.74L112,223.85,91.78,169A8,8,0,0,0,87,164.22L32.15,144,87,123.78A8,8,0,0,0,91.78,119L112,64.15,132.22,119a8,8,0,0,0,4.74,4.74L191.85,144ZM144,40a8,8,0,0,1,8-8h16V16a8,8,0,0,1,16,0V32h16a8,8,0,0,1,0,16H184V64a8,8,0,0,1-16,0V48H152A8,8,0,0,1,144,40ZM248,88a8,8,0,0,1-8,8h-8v8a8,8,0,0,1-16,0V96h-8a8,8,0,0,1,0-16h8V72a8,8,0,0,1,16,0v8h8A8,8,0,0,1,248,88Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span
+                      class="font-mono text-[0.8125rem] font-medium tracking-wider text-amber-600 uppercase"
+                      >AI Gateway</span
+                    >
+                    <h3 class="text-strong text-3xl font-semibold text-balance">
+                      One gateway,<br /><span class="italic">every</span> model.
+                    </h3>
+                    <p class="text-body text-sm text-balance">
+                      Change one URL to route between hosted or self-hosted
+                      models, with failover and observability built in.
+                    </p>
+                  </div>
+                  <div
+                    class="pointer-events-none w-full max-w-full mask-t-from-95%"
+                  >
+                    <div class="aspect-408/344 w-full"></div>
+                  </div>
+                  <span
+                    class="text-strong pointer-events-none mt-auto inline-flex h-9 items-center justify-center rounded-full bg-neutral-500/20 px-[1.125rem] font-mono text-[0.8125rem] font-medium tracking-wider uppercase transition-colors group-hover:bg-neutral-950 group-hover:text-neutral-50"
+                    >Learn more</span
+                  ></a
+                ><a
+                  id="home-tile-gateway"
+                  class="group rounded-xl border border-card bg-card relative flex flex-col items-center gap-6 overflow-hidden p-8 text-center transition-colors hover:border-emerald-600/30"
+                  href="/gateway"
+                  data-discover="true"
+                  ><div
+                    class="pointer-events-none absolute inset-0 z-10 -m-px rounded-xl opacity-0 transition-opacity duration-500 ease-in-out group-focus-within:opacity-100 group-hover:opacity-100"
+                    style="
+                      background: radial-gradient(
+                        circle at 50% 100%,
+                        rgba(16, 185, 129, 0.2),
+                        transparent 80%
+                      );
+                    "
+                  ></div>
+                  <div
+                    class="pointer-events-none flex flex-col items-center gap-2"
+                  >
+                    <div
+                      class="flex items-center justify-center rounded-md bg-emerald-500/20 p-2"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                        data-slot="icon"
+                        class="shrink-0 size-8 text-emerald-600"
+                      >
+                        <path
+                          d="M128,24h0A104,104,0,1,0,232,128,104.12,104.12,0,0,0,128,24Zm88,104a87.61,87.61,0,0,1-3.33,24H174.16a157.44,157.44,0,0,0,0-48h38.51A87.61,87.61,0,0,1,216,128ZM102,168H154a115.11,115.11,0,0,1-26,45A115.27,115.27,0,0,1,102,168Zm-3.9-16a140.84,140.84,0,0,1,0-48h59.88a140.84,140.84,0,0,1,0,48ZM40,128a87.61,87.61,0,0,1,3.33-24H81.84a157.44,157.44,0,0,0,0,48H43.33A87.61,87.61,0,0,1,40,128ZM154,88H102a115.11,115.11,0,0,1,26-45A115.27,115.27,0,0,1,154,88Zm52.33,0H170.71a135.28,135.28,0,0,0-22.3-45.6A88.29,88.29,0,0,1,206.37,88ZM107.59,42.4A135.28,135.28,0,0,0,85.29,88H49.63A88.29,88.29,0,0,1,107.59,42.4ZM49.63,168H85.29a135.28,135.28,0,0,0,22.3,45.6A88.29,88.29,0,0,1,49.63,168Zm98.78,45.6a135.28,135.28,0,0,0,22.3-45.6h35.66A88.29,88.29,0,0,1,148.41,213.6Z"
+                        ></path>
+                      </svg>
+                    </div>
+                    <span
+                      class="font-mono text-[0.8125rem] font-medium tracking-wider text-emerald-600 uppercase"
+                      >Gateway</span
+                    >
+                    <h3 class="text-strong text-3xl font-semibold text-balance">
+                      All your traffic.<br />One gateway.
+                    </h3>
+                    <p class="text-body text-sm text-balance">
+                      An all-in-one cloud networking platform that secures,
+                      transforms, and routes traffic to all your services no
+                      matter where they run.
+                    </p>
+                  </div>
+                  <div
+                    class="pointer-events-none w-full max-w-full mask-t-from-95%"
+                  >
+                    <div class="aspect-424/344 w-full"></div>
+                  </div>
+                  <span
+                    class="text-strong pointer-events-none mt-auto inline-flex h-9 items-center justify-center rounded-full bg-neutral-500/20 px-[1.125rem] font-mono text-[0.8125rem] font-medium tracking-wider uppercase transition-colors group-hover:bg-neutral-950 group-hover:text-neutral-50"
+                    >Learn more</span
+                  ></a
+                >
+              </div>
+            </div>
+          </section>
+          <section
+            class="flex flex-col items-center justify-center px-4 py-12 sm:py-20"
+          >
+            <div
+              class="flex w-full max-w-268.75 flex-col items-center justify-center gap-12 min-[70.625rem]:flex-row"
+            >
+              <svg
+                aria-hidden="true"
+                width="146"
+                height="201"
+                viewBox="0 0 146 201"
+                class="min-[70.625rem]:block hidden"
+              >
+                <title>Decoration</title>
+                <path
+                  d="M145.5 0V100.5M145.5 201V100.5M145.5 100.5H0"
+                  stroke="var(--border-color-popover)"
+                ></path></svg
+              ><svg
+                aria-hidden="true"
+                width="162"
+                height="67"
+                fill="none"
+                viewBox="0 0 162 67"
+                class="block min-[70.625rem]:hidden"
+              >
+                <title>Decoration</title>
+                <path
+                  stroke="var(--border-color-popover)"
+                  d="M.25 66.5h81m80 0h-80m0 0V0"
+                ></path>
+              </svg>
+              <div class="flex flex-1 flex-col items-center gap-8">
+                <div class="flex flex-col items-center gap-2">
+                  <div
+                    class="flex items-center justify-center rounded-md bg-purple-500/20 p-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-8 text-purple-600"
+                    >
+                      <path
+                        d="M237.66,106.35l-80-80A8,8,0,0,0,144,32V72.35c-25.94,2.22-54.59,14.92-78.16,34.91-28.38,24.08-46.05,55.11-49.76,87.37a12,12,0,0,0,20.68,9.58h0c11-11.71,50.14-48.74,107.24-52V192a8,8,0,0,0,13.66,5.65l80-80A8,8,0,0,0,237.66,106.35ZM160,172.69V144a8,8,0,0,0-8-8c-28.08,0-55.43,7.33-81.29,21.8a196.17,196.17,0,0,0-36.57,26.52c5.8-23.84,20.42-46.51,42.05-64.86C99.41,99.77,127.75,88,152,88a8,8,0,0,0,8-8V51.32L220.69,112Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <span
+                    class="font-mono text-[0.8125rem] font-medium tracking-wider text-purple-600 uppercase"
+                    >Share localhost</span
+                  >
+                  <h3
+                    class="font-family text-strong w-full max-w-xs text-center text-3xl leading-tight md:max-w-none md:text-4xl"
+                  >
+                    Try ngrok by sharing a local app.
+                    <br class="hidden md:block" /><span class="italic"
+                      >Right now</span
+                    >.
+                  </h3>
+                </div>
+                <div
+                  dir="ltr"
+                  data-orientation="horizontal"
+                  class="flex flex-col items-center gap-6"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      role="tablist"
+                      aria-orientation="horizontal"
+                      class="flex items-center gap-2"
+                      aria-label="Operating system"
+                      tabindex="0"
+                      data-orientation="horizontal"
+                      style="outline: none"
+                    >
+                      <button
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="radix-_R_km55_-content-mac-os"
+                        data-state="inactive"
+                        id="try-ngrok-mac-os"
+                        class="text-muted data-state-active:text-strong flex items-center justify-center rounded-full p-2 hover:bg-black/10 data-state-active:bg-black/20"
+                        aria-label="macOS"
+                        tabindex="-1"
+                        data-orientation="horizontal"
+                        data-radix-collection-item=""
+                      >
+                        <svg
+                          viewBox="0 0 32 32"
+                          width="1em"
+                          height="1em"
+                          fill="currentColor"
+                          color="inherit"
+                          data-slot="icon"
+                          class="shrink-0 size-6"
+                        >
+                          <path
+                            d="M16.21 8.05c-1.1 0-2.8-1.26-4.6-1.22a6.78 6.78 0 0 0-5.74 3.52c-2.46 4.29-.64 10.62 1.76 14.1 1.17 1.7 2.56 3.6 4.4 3.55 1.76-.08 2.42-1.15 4.56-1.15 2.12 0 2.72 1.15 4.59 1.1 1.9-.03 3.1-1.72 4.26-3.44a15.27 15.27 0 0 0 1.93-3.98 6.17 6.17 0 0 1-.73-10.99 6.5 6.5 0 0 0-5.09-2.77c-2.31-.18-4.26 1.28-5.34 1.28Zm3.92-3.58A6.15 6.15 0 0 0 21.57 0c-1.4.06-3.09.94-4.1 2.12A5.88 5.88 0 0 0 16 6.45c1.55.13 3.15-.8 4.12-1.98"
+                          ></path>
+                        </svg></button
+                      ><button
+                        type="button"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="radix-_R_km55_-content-windows"
+                        data-state="active"
+                        id="try-ngrok-windows"
+                        class="text-muted data-state-active:text-strong flex items-center justify-center rounded-full p-2 hover:bg-black/10 data-state-active:bg-black/20"
+                        aria-label="Windows"
+                        tabindex="-1"
+                        data-orientation="horizontal"
+                        data-radix-collection-item=""
+                      >
+                        <svg
+                          viewBox="0 0 32 32"
+                          width="1em"
+                          height="1em"
+                          data-slot="icon"
+                          class="shrink-0 size-6"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="m4 7.32 9.8-1.34.01 9.46-9.8.06L4 7.32Z"
+                          ></path>
+                          <path
+                            fill="currentColor"
+                            d="m15 5.8 13-1.9v11.42l-13 .1V5.81Z"
+                          ></path>
+                          <path
+                            fill="currentColor"
+                            d="m13.8 16.53.01 9.47-9.8-1.35v-8.18l9.8.06Z"
+                          ></path>
+                          <path
+                            fill="currentColor"
+                            d="M28 16.62v11.36l-13-1.83-.03-9.55 13.03.02Z"
+                          ></path>
+                        </svg></button
+                      ><button
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="radix-_R_km55_-content-docker"
+                        data-state="inactive"
+                        id="try-ngrok-docker"
+                        class="text-muted data-state-active:text-strong flex items-center justify-center rounded-full p-2 hover:bg-black/10 data-state-active:bg-black/20"
+                        aria-label="Docker"
+                        tabindex="-1"
+                        data-orientation="horizontal"
+                        data-radix-collection-item=""
+                      >
+                        <svg
+                          viewBox="0 0 32 32"
+                          width="1em"
+                          height="1em"
+                          data-slot="icon"
+                          class="shrink-0 size-6"
+                        >
+                          <path
+                            fill="currentColor"
+                            d="M16.4 4.98h3.04v3.04h-3.03V4.98Zm0 3.82h3.04v3.03h-3.03V8.8Zm3.04 3.81h-3.03v3.04h3.03v-3.04ZM12.72 8.8h3.03v3.03h-3.03V8.8Zm3.03 3.81h-3.03v3.04h3.03v-3.04ZM9.03 8.8h3.03v3.03H9.03V8.8Zm3.03 3.81H9.03v3.04h3.03v-3.04Zm-6.68 0h3.04v3.04H5.38v-3.04Zm17.75 0H20.1v3.04h3.04v-3.04Z"
+                          ></path>
+                          <path
+                            fill="currentColor"
+                            d="M3.71 16.63s-1.3 9.85 9.89 9.85c11.55 0 13.93-9.5 13.93-9.5s3.64.17 4.47-2.52c-1.48-1.35-3.86-.57-3.86-.57s.09-2-2.26-3.34c-2.08 2.78-.3 5.08-.3 5.08s-.04 1-3.2 1H3.72Z"
+                          ></path>
+                        </svg></button
+                      ><button
+                        type="button"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="radix-_R_km55_-content-coding-agent"
+                        data-state="inactive"
+                        id="try-ngrok-coding-agent"
+                        class="text-muted data-state-active:text-strong flex items-center justify-center rounded-full p-2 hover:bg-black/10 data-state-active:bg-black/20"
+                        aria-label="Coding Agent"
+                        tabindex="-1"
+                        data-orientation="horizontal"
+                        data-radix-collection-item=""
+                      >
+                        <span
+                          class="relative flex size-6 items-center justify-center"
+                          ><svg
+                            viewBox="0 -1 512 512"
+                            height="1em"
+                            width="1em"
+                            data-slot="icon"
+                            class="shrink-0 absolute inset-0 size-6 motion-safe:animate-[icon-carousel_8s_ease-in-out_infinite_backwards]"
+                          >
+                            <path
+                              fill="currentColor"
+                              d="m142.27 316.62 73.66-41.33 1.23-3.59-1.23-2h-3.6l-12.3-.75-42.09-1.14-36.5-1.52-35.36-1.9-8.9-1.89-8.33-11 .86-5.48 7.48-5.03 10.71.94 23.69 1.62 35.53 2.45 25.79 1.52 38.19 3.96h6.06l.86-2.45-2.07-1.51-1.62-1.52-36.77-24.92-39.81-26.34-20.86-15.17-11.27-7.68-5.69-7.2-2.45-15.73 10.24-11.27 13.75.94 3.51.93 13.93 10.72 29.75 23.03 38.85 28.6 5.69 4.73 2.27-1.61.28-1.14-2.55-4.27-21.13-38.2-22.55-38.84-10.04-16.1-2.65-9.66c-.93-3.97-1.62-7.3-1.62-11.37l11.66-15.83 6.44-2.07 15.55 2.07 6.54 5.7 9.66 22.08 15.64 34.78 24.27 47.3 7.1 14.02 3.8 13 1.4 3.96h2.46v-2.27l2-26.64 3.68-32.71 3.6-42.09 1.23-11.85 5.87-14.2L287.76 73l9.1 4.35 7.48 10.72L303.3 95l-4.45 28.92-8.72 45.29-5.68 30.33h3.3l3.8-3.79 15.34-20.37 25.78-32.23 11.38-12.79 13.27-14.13 8.52-6.72h16.1l11.85 17.62-5.3 18.2-16.59 21.02-13.75 17.82-19.71 26.54-12.31 21.23 1.13 1.7 2.94-.28 44.53-9.48 24.06-4.35 28.72-4.93 13 6.07 1.4 6.17-5.1 12.61-30.7 7.58-36.03 7.2-53.63 12.7-.66.48.76.93 24.16 2.28 10.34.55h25.3l47.11 3.52 12.31 8.14 7.38 9.96-1.23 7.58-18.96 9.65-25.58-6.06-59.7-14.2-20.48-5.11h-2.83v1.69l17.06 16.68 31.27 28.23 39.15 36.4 2 9-5.03 7.1-5.3-.76-34.4-25.88-13.28-11.65-30.05-25.3h-2v2.65l6.93 10.14 36.57 54.97 1.9 16.86-2.66 5.49-9.47 3.3-10.42-1.89-21.4-30.05-22.1-33.85-17.82-30.33-2.17 1.24-10.52 113.26-4.92 5.79-11.38 4.35-9.48-7.2-5.03-11.66 5.03-23.02 6.07-30.06 4.93-23.88 4.45-29.68 2.65-9.85-.18-.66-2.17.28-22.37 30.7-34.02 45.98-26.92 28.82-6.44 2.55-11.18-5.79 1.04-10.33 6.24-9.2 37.26-47.4 22.47-29.37 14.5-16.96-.1-2.45h-.85l-98.96 64.25-17.61 2.28-7.59-7.1.94-11.66 3.59-3.79 29.75-20.47-.1.1z"
+                            ></path></svg
+                          ><svg
+                            viewBox="0 0 32 32"
+                            height="1em"
+                            width="1em"
+                            data-slot="icon"
+                            class="shrink-0 absolute inset-0 size-6 opacity-0 motion-safe:animate-[icon-carousel_8s_ease-in-out_2s_infinite_backwards]"
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M27.142 13.671a6.32 6.32 0 0 0-.558-5.25c-1.42-2.44-4.272-3.694-7.058-3.104a6.52 6.52 0 0 0-4.89-2.15c-2.848-.006-5.375 1.803-6.25 4.477a6.48 6.48 0 0 0-4.333 3.101 6.4 6.4 0 0 0 .807 7.584 6.32 6.32 0 0 0 .556 5.252c1.42 2.438 4.272 3.692 7.058 3.103a6.52 6.52 0 0 0 4.889 2.15c2.85.006 5.378-1.804 6.254-4.48a6.48 6.48 0 0 0 4.334-3.104 6.4 6.4 0 0 0-.808-7.58zm-9.778 13.485a4.9 4.9 0 0 1-3.121-1.113c.04-.021.108-.059.154-.087l5.18-2.951a.83.83 0 0 0 .425-.727v-7.205l2.19 1.247a.08.08 0 0 1 .041.058v5.968c-.003 2.653-2.181 4.804-4.87 4.81M6.89 22.743a4.74 4.74 0 0 1-.581-3.223c.037.023.105.064.153.09l5.18 2.953a.85.85 0 0 0 .851 0l6.323-3.603v2.494a.08.08 0 0 1-.031.067l-5.236 2.982c-2.332 1.325-5.31.536-6.658-1.762zM5.527 11.585a4.84 4.84 0 0 1 2.537-2.107l-.002.177v5.903a.83.83 0 0 0 .425.728l6.323 3.601-2.189 1.249a.08.08 0 0 1-.073.006L7.31 18.156c-2.328-1.33-3.126-4.268-1.785-6.568zm17.986 4.13-6.323-3.602 2.189-1.246a.08.08 0 0 1 .073-.007l5.237 2.983c2.331 1.33 3.13 4.272 1.784 6.572a4.86 4.86 0 0 1-2.536 2.108v-6.08a.83.83 0 0 0-.424-.727m2.178-3.235-.153-.09-5.18-2.953a.85.85 0 0 0-.851 0l-6.323 3.603v-2.494a.08.08 0 0 1 .031-.067L18.45 7.5c2.333-1.327 5.314-.537 6.658 1.765.568.972.776 2.11.584 3.216m-13.697 4.445-2.19-1.246a.08.08 0 0 1-.042-.06V9.653c.001-2.656 2.185-4.809 4.878-4.806 1.138 0 2.24.394 3.116 1.112l-.153.086-5.18 2.951a.83.83 0 0 0-.426.727l-.003 7.202zm1.19-2.53L16 12.793l2.816 1.604v3.208L16 19.208l-2.818-1.604v-3.208z"
+                            ></path></svg
+                          ><svg
+                            viewBox="0 0 24 24"
+                            height="1em"
+                            width="1em"
+                            data-slot="icon"
+                            class="shrink-0 absolute inset-0 size-6 opacity-0 motion-safe:animate-[icon-carousel_8s_ease-in-out_4s_infinite_backwards]"
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M11.5.13 1.9 5.68a.8.8 0 0 0-.43.72v11.2c0 .3.16.57.42.72l9.61 5.55a1 1 0 0 0 1 0l9.6-5.55a.8.8 0 0 0 .43-.73V6.4a.8.8 0 0 0-.42-.72L12.5.13a1 1 0 0 0-1 0m-8.84 6.2H21.2c.26 0 .43.3.3.52l-9.28 16.07c-.06.1-.23.06-.23-.06V12.34a.6.6 0 0 0-.3-.51L2.6 6.57c-.11-.06-.07-.23.06-.23"
+                            ></path></svg
+                          ><svg
+                            viewBox="0 0 24 24"
+                            height="1em"
+                            width="1em"
+                            data-slot="icon"
+                            class="shrink-0 absolute inset-0 size-6 opacity-0 motion-safe:animate-[icon-carousel_8s_ease-in-out_6s_infinite_backwards]"
+                          >
+                            <path
+                              fill="currentColor"
+                              d="M12 0A12 12 0 0 1 0 12a12 12 0 0 1 12 12 12 12 0 0 1 12-12A12 12 0 0 1 12 0"
+                            ></path></svg
+                        ></span>
+                      </button>
+                    </div>
+                    <button
+                      aria-disabled="false"
+                      data-slot="icon-button"
+                      class="icon-button inline-flex shrink-0 items-center justify-center border focus:outline-hidden focus-visible:ring-4 disabled:cursor-default disabled:opacity-50 not-disabled:active:scale-97 ease-out transition-transform duration-150 focus-visible:ring-focus-accent not-disabled:hover:bg-neutral-500/10 not-disabled:hover:text-strong border-transparent size-9 text-muted data-state-active:text-strong rounded-full data-state-active:bg-black/20"
+                      data-appearance="ghost"
+                      data-disabled="false"
+                      data-icon-button="true"
+                      data-loading="false"
+                      type="button"
+                    >
+                      <span class="sr-only">Choose another platform</span
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                        class="shrink-0 size-6"
+                        data-slot="icon"
+                      >
+                        <path
+                          d="M144,128a16,16,0,1,1-16-16A16,16,0,0,1,144,128ZM60,112a16,16,0,1,0,16,16A16,16,0,0,0,60,112Zm136,0a16,16,0,1,0,16,16A16,16,0,0,0,196,112Z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div
+                    data-state="inactive"
+                    data-orientation="horizontal"
+                    role="tabpanel"
+                    aria-labelledby="radix-_R_km55_-trigger-mac-os"
+                    hidden=""
+                    id="radix-_R_km55_-content-mac-os"
+                    tabindex="0"
+                    class="relative"
+                  ></div>
+                  <div
+                    data-state="active"
+                    data-orientation="horizontal"
+                    role="tabpanel"
+                    aria-labelledby="radix-_R_km55_-trigger-windows"
+                    id="radix-_R_km55_-content-windows"
+                    tabindex="0"
+                    class="relative"
+                  >
+                    <code
+                      class="border-card bg-card xs:w-80 text-muted block rounded-full border py-2 pr-12 pl-4 font-mono text-[0.9375rem]"
+                      >$
+                      <span
+                        class="bg-[linear-gradient(98deg,var(--color-amber-700)_1.35%,var(--color-lime-700)_18.48%,var(--color-emerald-700)_38.35%,var(--color-sky-700)_58.63%,var(--color-purple-700)_79.7%,var(--color-rose-700)_100%)] bg-clip-text text-transparent"
+                        >scoop install ngrok</span
+                      ></code
+                    ><button
+                      type="button"
+                      class="text-muted hover:text-strong absolute top-1/2 right-2 -translate-y-1/2 rounded-full p-2 transition-colors"
+                      aria-label="Copy to clipboard"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="1em"
+                        height="1em"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                        class="size-5"
+                      >
+                        <path
+                          d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div
+                    data-state="inactive"
+                    data-orientation="horizontal"
+                    role="tabpanel"
+                    aria-labelledby="radix-_R_km55_-trigger-docker"
+                    id="radix-_R_km55_-content-docker"
+                    tabindex="0"
+                    class="relative"
+                    style=""
+                    hidden=""
+                  ></div>
+                  <div
+                    data-state="inactive"
+                    data-orientation="horizontal"
+                    role="tabpanel"
+                    aria-labelledby="radix-_R_km55_-trigger-coding-agent"
+                    hidden=""
+                    id="radix-_R_km55_-content-coding-agent"
+                    tabindex="0"
+                    class="relative"
+                  ></div>
+                </div>
+                <div
+                  class="flex flex-wrap items-center justify-center gap-x-8 gap-y-2"
+                >
+                  <a
+                    class="text-muted group hover:text-strong inline-flex items-center gap-2 font-mono text-[0.8125rem] font-medium tracking-wider uppercase transition-colors"
+                    id="try-ngrok-learn-more"
+                    href="/use-cases/share-localhost"
+                    data-discover="true"
+                    >Learn more<svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-6 transition-transform group-hover:translate-x-1.5"
+                    >
+                      <path
+                        d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                      ></path></svg></a
+                  ><a
+                    class="text-muted group hover:text-strong inline-flex items-center gap-2 font-mono text-[0.8125rem] font-medium tracking-wider uppercase transition-colors"
+                    id="try-ngrok-download-link"
+                    href="/download/windows"
+                    data-discover="true"
+                    >Download &amp; setup<svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-6 transition-transform group-hover:translate-x-1.5"
+                    >
+                      <path
+                        d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                      ></path></svg
+                  ></a>
+                </div>
+              </div>
+              <svg
+                aria-hidden="true"
+                width="146"
+                height="201"
+                viewBox="0 0 146 201"
+                class="min-[70.625rem]:block hidden -scale-x-100"
+              >
+                <title>Decoration</title>
+                <path
+                  d="M145.5 0V100.5M145.5 201V100.5M145.5 100.5H0"
+                  stroke="var(--border-color-popover)"
+                ></path></svg
+              ><svg
+                aria-hidden="true"
+                width="162"
+                height="67"
+                fill="none"
+                viewBox="0 0 162 67"
+                class="block min-[70.625rem]:hidden -scale-y-100"
+              >
+                <title>Decoration</title>
+                <path
+                  stroke="var(--border-color-popover)"
+                  d="M.25 66.5h81m80 0h-80m0 0V0"
+                ></path>
+              </svg>
+            </div>
+          </section>
+          <section class="py-12 sm:py-20">
+            <div class="mx-auto flex w-full flex-col items-center gap-12">
+              <div
+                class="flex w-full max-w-270 flex-col items-center gap-2 px-4"
+              >
+                <h2
+                  class="font-family text-strong w-full max-w-xs text-center text-4xl leading-none md:max-w-173.5 md:text-5xl"
+                >
+                  Developers go on and on about us.
+                </h2>
+              </div>
+              <div
+                class="w-full [scrollbar-width:none] overflow-x-auto overscroll-x-contain pl-4 [-ms-overflow-style:none] sm:hidden [&amp;::-webkit-scrollbar]:hidden"
+              >
+                <div class="flex w-max snap-x snap-mandatory gap-4 pr-4">
+                  <div class="w-[calc(100vw-3.5rem)] shrink-0 snap-center">
+                    <div class="flex flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Scott Motte
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @motdotla
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is so effing amazing
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="bg-card border rounded-xl relative group overflow-hidden border-rose-600/30 bg-[radial-gradient(150%_150%_at_50%_100%,#F43F5E26_0%,transparent_60%)]"
+                        data-spotlight="true"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Ihor Leshko
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              Director of Engineering
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok opened the door for Databricks to rapidly
+                            onboard big enterprise customers with comprehensive
+                            security much less operational complexity.
+                          </p>
+                          <img
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/databricks-wordmark.svg"
+                            alt="Databricks"
+                            width="150"
+                            height="24"
+                            class="relative mt-4 h-6 w-37.5"
+                          /><img
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/databricks.svg"
+                            alt=""
+                            width="164"
+                            height="178"
+                            class="pointer-events-none absolute -right-14 -bottom-10 h-44.5 w-41 opacity-5 select-none"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Kevin Simper
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @kevinsimper
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            I wouldn't know how to work without ngrok.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-[calc(100vw-3.5rem)] shrink-0 snap-center">
+                    <div class="flex flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Lyzi Diamond
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @lyzidiamond
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            OMG life changer. I can't imagine how I lived
+                            without ngrok.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="bg-card border rounded-xl relative group overflow-hidden border-lime-700/20 bg-[radial-gradient(150%_150%_at_50%_100%,#84cc1626_0%,transparent_60%)]"
+                        data-spotlight="true"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Wesley Gorman
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              Senior Director, Engineering, Zendesk
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok has been super user friendly, works
+                            seamlessly, and never gets in our way. Today, our
+                            engineers spend less time troubleshooting proxy
+                            issues and more time building.
+                          </p>
+                          <img
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/zendesk-wordmark.svg"
+                            alt="Zendesk"
+                            width="101"
+                            height="20"
+                            class="relative mt-4 h-5 w-25.25"
+                          /><img
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/zendesk-icon.svg"
+                            alt=""
+                            width="320"
+                            height="320"
+                            class="pointer-events-none absolute -right-32 -bottom-40 z-5 size-80 opacity-5 select-none"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Brian Ketelsen
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @bketelsen
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            Just used ngrok for the first time to show off a new
+                            GopherCon web layout. Wow, that's awesome.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="w-[calc(100vw-3.5rem)] shrink-0 snap-center">
+                    <div class="flex flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Cassidy Williams
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @cassidoo
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok saves me so much time during development. What
+                            a tool.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="bg-card border rounded-xl relative group overflow-hidden border-sky-700/20 bg-[radial-gradient(150%_150%_at_50%_100%,#38BDF826_0%,transparent_60%)]"
+                        data-spotlight="true"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Austin Cottrell
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              Cloud Infrastructure Engineer
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok continues to wow us with great APIs and
+                            automation. Establishing secure remote connectivity
+                            with our customer's environments via REST APIs is
+                            fast and safe ... and amazing!
+                          </p>
+                          <img
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/copado-wordmark.svg"
+                            alt="Copado"
+                            width="118"
+                            height="32"
+                            class="relative mt-4 h-8 w-29.5"
+                          /><img
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/copado.svg"
+                            alt=""
+                            width="187"
+                            height="187"
+                            class="pointer-events-none absolute -right-14 -bottom-10 size-46.75 opacity-5 select-none"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Steve Kinney
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @stevekinney
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok makes the hard parts of networking feel
+                            effortless.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="relative hidden w-full overflow-hidden sm:block mask-x-from-80% mask-x-to-100% xl:mx-auto xl:max-w-7xl"
+              >
+                <div class="flex w-max gap-4 will-change-transform">
+                  <div class="flex shrink-0 gap-4">
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Scott Motte
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @motdotla
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is so effing amazing
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="bg-card border rounded-xl relative group overflow-hidden border-rose-600/30 bg-[radial-gradient(150%_150%_at_50%_100%,#F43F5E26_0%,transparent_60%)]"
+                        data-spotlight="true"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Ihor Leshko
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              Director of Engineering
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok opened the door for Databricks to rapidly
+                            onboard big enterprise customers with comprehensive
+                            security much less operational complexity.
+                          </p>
+                          <img
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/databricks-wordmark.svg"
+                            alt="Databricks"
+                            width="150"
+                            height="24"
+                            class="relative mt-4 h-6 w-37.5"
+                          /><img
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/databricks.svg"
+                            alt=""
+                            width="164"
+                            height="178"
+                            class="pointer-events-none absolute -right-14 -bottom-10 h-44.5 w-41 opacity-5 select-none"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Kevin Simper
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @kevinsimper
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            I wouldn't know how to work without ngrok.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Brian Cantrell
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @briancantrell
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is making my life so much better.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Kent C. Dodds
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @kentcdodds
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            Just got introduced to #ngrok by @geddski. This
+                            thing's amazing.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Lorna Mitchell
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @lornajane
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            I have literally no idea how I solved many of these
+                            problems before I used ngrok
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Lyzi Diamond
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @lyzidiamond
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            OMG life changer. I can't imagine how I lived
+                            without ngrok.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="bg-card border rounded-xl relative group overflow-hidden border-lime-700/20 bg-[radial-gradient(150%_150%_at_50%_100%,#84cc1626_0%,transparent_60%)]"
+                        data-spotlight="true"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Wesley Gorman
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              Senior Director, Engineering, Zendesk
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok has been super user friendly, works
+                            seamlessly, and never gets in our way. Today, our
+                            engineers spend less time troubleshooting proxy
+                            issues and more time building.
+                          </p>
+                          <img
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/zendesk-wordmark.svg"
+                            alt="Zendesk"
+                            width="101"
+                            height="20"
+                            class="relative mt-4 h-5 w-25.25"
+                          /><img
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/zendesk-icon.svg"
+                            alt=""
+                            width="320"
+                            height="320"
+                            class="pointer-events-none absolute -right-32 -bottom-40 z-5 size-80 opacity-5 select-none"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Brian Ketelsen
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @bketelsen
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            Just used ngrok for the first time to show off a new
+                            GopherCon web layout. Wow, that's awesome.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Gajus
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @kuizinas
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            Holy smokes, ngrok is incredible. This is going to
+                            change my workflow forever.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              georges
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @multiplegeorges
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is so useful that I actually enjoy paying for
+                            it.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Yehuda Katz
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @waborwycatz
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is one of those tools that you don't realize
+                            you need until you try it. Then it's indispensable.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Cassidy Williams
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @cassidoo
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok saves me so much time during development. What
+                            a tool.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="bg-card border rounded-xl relative group overflow-hidden border-sky-700/20 bg-[radial-gradient(150%_150%_at_50%_100%,#38BDF826_0%,transparent_60%)]"
+                        data-spotlight="true"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Austin Cottrell
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              Cloud Infrastructure Engineer
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok continues to wow us with great APIs and
+                            automation. Establishing secure remote connectivity
+                            with our customer's environments via REST APIs is
+                            fast and safe ... and amazing!
+                          </p>
+                          <img
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/copado-wordmark.svg"
+                            alt="Copado"
+                            width="118"
+                            height="32"
+                            class="relative mt-4 h-8 w-29.5"
+                          /><img
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/copado.svg"
+                            alt=""
+                            width="187"
+                            height="187"
+                            class="pointer-events-none absolute -right-14 -bottom-10 size-46.75 opacity-5 select-none"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Steve Kinney
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @stevekinney
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok makes the hard parts of networking feel
+                            effortless.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Kareem
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @kareemsinchin
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is the api gateway goat honestly
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Bree Hoffman
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @breefield
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is genius, replaying requests makes webhooks
+                            1M times easier to handle.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Peter Vukovic
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @pvukovic
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            Spent 3 hours looking for a good ngrok alternative.
+                            Let me save you some time: there isn't a better
+                            ngrok alternative.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex shrink-0 gap-4" aria-hidden="true">
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Scott Motte
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @motdotla
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is so effing amazing
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="bg-card border rounded-xl relative group overflow-hidden border-rose-600/30 bg-[radial-gradient(150%_150%_at_50%_100%,#F43F5E26_0%,transparent_60%)]"
+                        data-spotlight="true"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Ihor Leshko
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              Director of Engineering
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok opened the door for Databricks to rapidly
+                            onboard big enterprise customers with comprehensive
+                            security much less operational complexity.
+                          </p>
+                          <img
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/databricks-wordmark.svg"
+                            alt="Databricks"
+                            width="150"
+                            height="24"
+                            class="relative mt-4 h-6 w-37.5"
+                          /><img
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/databricks.svg"
+                            alt=""
+                            width="164"
+                            height="178"
+                            class="pointer-events-none absolute -right-14 -bottom-10 h-44.5 w-41 opacity-5 select-none"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Kevin Simper
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @kevinsimper
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            I wouldn't know how to work without ngrok.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Brian Cantrell
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @briancantrell
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is making my life so much better.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Kent C. Dodds
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @kentcdodds
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            Just got introduced to #ngrok by @geddski. This
+                            thing's amazing.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Lorna Mitchell
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @lornajane
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            I have literally no idea how I solved many of these
+                            problems before I used ngrok
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Lyzi Diamond
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @lyzidiamond
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            OMG life changer. I can't imagine how I lived
+                            without ngrok.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="bg-card border rounded-xl relative group overflow-hidden border-lime-700/20 bg-[radial-gradient(150%_150%_at_50%_100%,#84cc1626_0%,transparent_60%)]"
+                        data-spotlight="true"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Wesley Gorman
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              Senior Director, Engineering, Zendesk
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok has been super user friendly, works
+                            seamlessly, and never gets in our way. Today, our
+                            engineers spend less time troubleshooting proxy
+                            issues and more time building.
+                          </p>
+                          <img
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/zendesk-wordmark.svg"
+                            alt="Zendesk"
+                            width="101"
+                            height="20"
+                            class="relative mt-4 h-5 w-25.25"
+                          /><img
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/zendesk-icon.svg"
+                            alt=""
+                            width="320"
+                            height="320"
+                            class="pointer-events-none absolute -right-32 -bottom-40 z-5 size-80 opacity-5 select-none"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Brian Ketelsen
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @bketelsen
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            Just used ngrok for the first time to show off a new
+                            GopherCon web layout. Wow, that's awesome.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Gajus
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @kuizinas
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            Holy smokes, ngrok is incredible. This is going to
+                            change my workflow forever.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              georges
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @multiplegeorges
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is so useful that I actually enjoy paying for
+                            it.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Yehuda Katz
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @waborwycatz
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is one of those tools that you don't realize
+                            you need until you try it. Then it's indispensable.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Cassidy Williams
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @cassidoo
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok saves me so much time during development. What
+                            a tool.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="bg-card border rounded-xl relative group overflow-hidden border-sky-700/20 bg-[radial-gradient(150%_150%_at_50%_100%,#38BDF826_0%,transparent_60%)]"
+                        data-spotlight="true"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Austin Cottrell
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              Cloud Infrastructure Engineer
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok continues to wow us with great APIs and
+                            automation. Establishing secure remote connectivity
+                            with our customer's environments via REST APIs is
+                            fast and safe ... and amazing!
+                          </p>
+                          <img
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/copado-wordmark.svg"
+                            alt="Copado"
+                            width="118"
+                            height="32"
+                            class="relative mt-4 h-8 w-29.5"
+                          /><img
+                            aria-hidden="true"
+                            loading="lazy"
+                            decoding="async"
+                            src="https://ngrok.com//assets/home/copado.svg"
+                            alt=""
+                            width="187"
+                            height="187"
+                            class="pointer-events-none absolute -right-14 -bottom-10 size-46.75 opacity-5 select-none"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Steve Kinney
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @stevekinney
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok makes the hard parts of networking feel
+                            effortless.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="flex w-80 shrink-0 flex-col gap-4">
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Kareem
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @kareemsinchin
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is the api gateway goat honestly
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Bree Hoffman
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @breefield
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            ngrok is genius, replaying requests makes webhooks
+                            1M times easier to handle.
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        data-slot="card"
+                        class="border-card bg-card border rounded-xl relative group overflow-hidden"
+                        data-spotlight="false"
+                      >
+                        <div
+                          data-slot="card-body"
+                          class="p-6 border-t border-card-muted first:border-t-0 flex flex-col gap-2"
+                        >
+                          <div>
+                            <div
+                              class="text-body group-data-[spotlight~='true']:text-strong text-lg font-semibold"
+                            >
+                              Peter Vukovic
+                            </div>
+                            <div
+                              class="text-muted group-data-[spotlight~='true']:text-body text-sm"
+                            >
+                              @pvukovic
+                            </div>
+                          </div>
+                          <p
+                            class="text-body text-base group-data-[spotlight~='true']:text-strong"
+                          >
+                            Spent 3 hours looking for a good ngrok alternative.
+                            Let me save you some time: there isn't a better
+                            ngrok alternative.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="flex flex-col items-center gap-12 px-4 py-12 sm:py-20"
+          >
+            <div
+              class="relative flex w-full max-w-270 flex-col items-center gap-12"
+            >
+              <div class="relative flex flex-col items-center gap-4">
+                <h2
+                  class="font-family text-strong relative text-center text-4xl leading-none md:text-5xl"
+                >
+                  Every security checkbox, checked.
+                </h2>
+              </div>
+              <div class="flex flex-col items-center gap-8">
+                <ul
+                  class="text-strong grid grid-cols-2 gap-x-6 gap-y-2 text-sm md:grid-cols-5 md:text-base"
+                >
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-5 text-emerald-600 md:size-6"
+                    >
+                      <path
+                        d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                        opacity="0.2"
+                      ></path>
+                      <path
+                        d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                      ></path></svg
+                    >SOC2 Type II
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-5 text-emerald-600 md:size-6"
+                    >
+                      <path
+                        d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                        opacity="0.2"
+                      ></path>
+                      <path
+                        d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                      ></path></svg
+                    >HIPAA &amp; BAA
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-5 text-emerald-600 md:size-6"
+                    >
+                      <path
+                        d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                        opacity="0.2"
+                      ></path>
+                      <path
+                        d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                      ></path></svg
+                    >GDPR
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-5 text-emerald-600 md:size-6"
+                    >
+                      <path
+                        d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                        opacity="0.2"
+                      ></path>
+                      <path
+                        d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                      ></path></svg
+                    >CCPA
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-5 text-emerald-600 md:size-6"
+                    >
+                      <path
+                        d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                        opacity="0.2"
+                      ></path>
+                      <path
+                        d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                      ></path></svg
+                    >EU-US DPF
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-5 text-emerald-600 md:size-6"
+                    >
+                      <path
+                        d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                        opacity="0.2"
+                      ></path>
+                      <path
+                        d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                      ></path></svg
+                    >RBAC
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-5 text-emerald-600 md:size-6"
+                    >
+                      <path
+                        d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                        opacity="0.2"
+                      ></path>
+                      <path
+                        d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                      ></path></svg
+                    >SSO &amp; SCIM
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-5 text-emerald-600 md:size-6"
+                    >
+                      <path
+                        d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                        opacity="0.2"
+                      ></path>
+                      <path
+                        d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                      ></path></svg
+                    >Audit logs
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-5 text-emerald-600 md:size-6"
+                    >
+                      <path
+                        d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                        opacity="0.2"
+                      ></path>
+                      <path
+                        d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                      ></path></svg
+                    >Data residency
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="1em"
+                      height="1em"
+                      fill="currentColor"
+                      viewBox="0 0 256 256"
+                      data-slot="icon"
+                      class="shrink-0 size-5 text-emerald-600 md:size-6"
+                    >
+                      <path
+                        d="M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z"
+                        opacity="0.2"
+                      ></path>
+                      <path
+                        d="M173.66,98.34a8,8,0,0,1,0,11.32l-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35A8,8,0,0,1,173.66,98.34ZM232,128A104,104,0,1,1,128,24,104.11,104.11,0,0,1,232,128Zm-16,0a88,88,0,1,0-88,88A88.1,88.1,0,0,0,216,128Z"
+                      ></path></svg
+                    >White-labeling
+                  </li>
+                </ul>
+                <a
+                  href="https://trust.ngrok.com/"
+                  class="group flex items-center gap-2 text-emerald-600"
+                  id="home-trust-center"
+                  ><span
+                    class="font-mono text-[0.8125rem] font-medium tracking-wider uppercase"
+                    >Trust Center</span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="1em"
+                    height="1em"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                    data-slot="icon"
+                    class="shrink-0 size-6 transition-transform group-hover:translate-x-1.5"
+                  >
+                    <path
+                      d="M221.66,133.66l-72,72a8,8,0,0,1-11.32-11.32L196.69,136H40a8,8,0,0,1,0-16H196.69L138.34,61.66a8,8,0,0,1,11.32-11.32l72,72A8,8,0,0,1,221.66,133.66Z"
+                    ></path></svg
+                ></a>
+              </div>
+            </div>
+          </section>
+          <section
+            class="relative flex flex-col items-center justify-center px-4 py-12 sm:py-20"
+          >
+            <div
+              class="gradient-blur pointer-events-none absolute top-1/2 left-1/2 aspect-video w-11/12 max-w-167.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[linear-gradient(98deg,var(--color-amber-500)_1.35%,var(--color-lime-400)_18.48%,var(--color-emerald-400)_38.35%,var(--color-sky-500)_58.63%,var(--color-purple-500)_79.7%,var(--color-rose-500)_100%)] opacity-0 -z-10 animate-in fade-in duration-80 ease-out"
+              style="
+                --gradient-blur-filter: url(#gradient-blur-_r_1_);
+                --gradient-blur-filter-sm: url(#gradient-blur-sm-_r_1_);
+              "
+            >
+              <svg class="sr-only" aria-hidden="true">
+                <defs>
+                  <filter
+                    id="gradient-blur-_r_1_"
+                    x="-50%"
+                    y="-50%"
+                    width="200%"
+                    height="200%"
+                    color-interpolation-filters="linearRGB"
+                  >
+                    <feGaussianBlur
+                      in="SourceGraphic"
+                      stdDeviation="100"
+                      result="blur"
+                    ></feGaussianBlur>
+                    <feTurbulence
+                      type="fractalNoise"
+                      baseFrequency="0.8"
+                      numOctaves="4"
+                      seed="1"
+                      result="noise"
+                    ></feTurbulence>
+                    <feComposite
+                      in="blur"
+                      in2="noise"
+                      operator="arithmetic"
+                      k1="0"
+                      k2="1"
+                      k3="0.1"
+                      k4="0"
+                      result="dithered"
+                    ></feComposite>
+                    <feComposite
+                      in="dithered"
+                      in2="blur"
+                      operator="in"
+                      result="clipped"
+                    ></feComposite>
+                    <feColorMatrix
+                      in="clipped"
+                      type="saturate"
+                      values="1.4"
+                    ></feColorMatrix>
+                  </filter>
+                </defs></svg
+              ><svg class="sr-only" aria-hidden="true">
+                <defs>
+                  <filter
+                    id="gradient-blur-sm-_r_1_"
+                    x="-50%"
+                    y="-50%"
+                    width="200%"
+                    height="200%"
+                    color-interpolation-filters="linearRGB"
+                  >
+                    <feGaussianBlur
+                      in="SourceGraphic"
+                      stdDeviation="60"
+                      result="blur"
+                    ></feGaussianBlur>
+                    <feTurbulence
+                      type="fractalNoise"
+                      baseFrequency="0.8"
+                      numOctaves="4"
+                      seed="1"
+                      result="noise"
+                    ></feTurbulence>
+                    <feComposite
+                      in="blur"
+                      in2="noise"
+                      operator="arithmetic"
+                      k1="0"
+                      k2="1"
+                      k3="0.1"
+                      k4="0"
+                      result="dithered"
+                    ></feComposite>
+                    <feComposite
+                      in="dithered"
+                      in2="blur"
+                      operator="in"
+                      result="clipped"
+                    ></feComposite>
+                    <feColorMatrix
+                      in="clipped"
+                      type="saturate"
+                      values="1.4"
+                    ></feColorMatrix>
+                  </filter>
+                </defs>
+              </svg>
+            </div>
+            <div
+              class="relative flex w-full max-w-268.75 flex-col items-center justify-center gap-12 min-[70.625rem]:flex-row"
+            >
+              <svg
+                aria-hidden="true"
+                width="146"
+                height="201"
+                viewBox="0 0 146 201"
+                class="min-[70.625rem]:block hidden"
+              >
+                <title>Decoration</title>
+                <path
+                  d="M145.5 0V100.5M145.5 201V100.5M145.5 100.5H0"
+                  stroke="var(--border-color-popover)"
+                ></path></svg
+              ><svg
+                aria-hidden="true"
+                width="162"
+                height="67"
+                fill="none"
+                viewBox="0 0 162 67"
+                class="block min-[70.625rem]:hidden"
+              >
+                <title>Decoration</title>
+                <path
+                  stroke="var(--border-color-popover)"
+                  d="M.25 66.5h81m80 0h-80m0 0V0"
+                ></path>
+              </svg>
+              <div class="grid items-center gap-8">
+                <div class="flex flex-col items-center gap-4 text-center">
+                  <h3
+                    class="font-family text-strong w-full max-w-6xl text-4xl leading-none md:text-5xl"
+                  >
+                    Less wrestling with infrastructure.<br />
+                    More shipping.
+                  </h3>
+                </div>
+                <div
+                  class="2xs:flex-row flex w-full flex-col items-center justify-center gap-2"
+                >
+                  <svg class="sr-only" aria-hidden="true">
+                    <defs>
+                      <filter
+                        id="_R_6l255_"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%"
+                      >
+                        <feGaussianBlur
+                          in="SourceGraphic"
+                          stdDeviation="8"
+                        ></feGaussianBlur>
+                      </filter>
+                    </defs></svg
+                  ><a
+                    class="flex items-center justify-center relative rounded-full bg-black/90 hover:bg-black px-5 h-12 font-mono text-[0.8125rem] font-medium uppercase tracking-wider text-white/90 glow hover:after:scale-105 after:transition-transform active:scale-[97%] select-none [-webkit-user-select:none] [-webkit-touch-callout:none] [-webkit-tap-highlight-color:transparent] text-center 2xs:w-auto w-full shrink-0"
+                    style="--glow-filter: url(#_R_6l255_)"
+                    href="https://dashboard.ngrok.com/signup"
+                    id="footer-signup-cta"
+                    >Get started (for free)</a
+                  ><a
+                    id="footer-see-pricing"
+                    class="inline-flex items-center justify-center gap-1.5 whitespace-nowrap focus:outline-hidden focus-visible:ring-4 disabled:cursor-default disabled:opacity-50 not-disabled:active:scale-97 ease-out transition-transform duration-150 text-white focus-visible:ring-focus-accent border border-transparent text-sm font-medium font-sans bg-static-white/10 not-disabled:hover:bg-static-white/15 not-disabled:active:bg-static-white/15 2xs:w-auto h-12 w-full rounded-full px-5"
+                    aria-disabled="false"
+                    data-slot="button"
+                    data-appearance="filled"
+                    data-disabled="false"
+                    data-loading="false"
+                    data-priority="default"
+                    href="/pricing"
+                    data-discover="true"
+                    ><span
+                      class="text-strong font-mono text-[0.8125rem] leading-[1.538em] font-medium tracking-[0.05em] uppercase"
+                      >See pricing</span
+                    ></a
+                  >
+                </div>
+              </div>
+              <svg
+                aria-hidden="true"
+                width="146"
+                height="201"
+                viewBox="0 0 146 201"
+                class="min-[70.625rem]:block hidden -scale-x-100"
+              >
+                <title>Decoration</title>
+                <path
+                  d="M145.5 0V100.5M145.5 201V100.5M145.5 100.5H0"
+                  stroke="var(--border-color-popover)"
+                ></path></svg
+              ><svg
+                aria-hidden="true"
+                width="162"
+                height="67"
+                fill="none"
+                viewBox="0 0 162 67"
+                class="block min-[70.625rem]:hidden -scale-y-100"
+              >
+                <title>Decoration</title>
+                <path
+                  stroke="var(--border-color-popover)"
+                  d="M.25 66.5h81m80 0h-80m0 0V0"
+                ></path>
+              </svg>
+            </div>            
+          </section>
+        </div>
+      </main>
+      <div class="min-h-150"></div>
+    </div>
   </body>
 </html>
